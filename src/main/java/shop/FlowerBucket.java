@@ -9,11 +9,7 @@ public class FlowerBucket {
         this.packs.add(flowers);
     }
     public double getPrice(){
-        double price = 0;
-        for (int i = 0; i < packs.size(); i++) {
-            price += (packs.get(i).calcPrice());
-        }
-        return price;
+        return packs.stream().mapToDouble(FlowerPack::calcPrice).sum();
     }
 
 }

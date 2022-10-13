@@ -11,7 +11,7 @@ public class FlowerBucket {
     public double getPrice(){
         double price = 0;
         for (int i = 0; i < packs.size(); i++) {
-            price += (packs.get(i).getFlower().getPrice() * packs.get(i).getQuantity());
+            price += (packs.get(i).calcPrice());
         }
         return price;
     }

@@ -3,7 +3,7 @@ package shop;
 public class Flower {
     protected double sepalLength;
     protected FlowerColor color;
-    protected  double price;
+    protected double price;
 
     private FlowerType type;
 

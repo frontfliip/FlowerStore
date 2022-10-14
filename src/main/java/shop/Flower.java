@@ -1,9 +1,9 @@
 package shop;
 
 public class Flower {
-    protected double sepalLength;
-    protected FlowerColor color;
-    protected double price;
+    private double sepalLength;
+    private FlowerColor color;
+    private double price;
 
     private FlowerType type;
 
@@ -14,6 +14,15 @@ public class Flower {
                 ", color='" + color + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    public Flower(FlowerColor color, double price, FlowerType type) {
+        this.color = color;
+        this.price = price;
+        this.type = type;
+    }
+
+    public Flower() {
     }
 
     public FlowerType getType() {

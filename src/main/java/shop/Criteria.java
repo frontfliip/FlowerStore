@@ -2,18 +2,23 @@ package shop;
 
 public class Criteria {
 
-    private double sepalLength;
+    private final double sepalLength;
 
-    private FlowerColor color;
+    private final FlowerColor color;
 
-    private double maxPrice;
+    private final double maxPrice;
 
-    private FlowerType type;
+    private final FlowerType type;
 
-    public Criteria(FlowerType type, FlowerColor color, double maxPrice){
+    public Criteria(FlowerType type, FlowerColor color, double maxPrice, double sepalLength){
         this.type = type;
         this.color = color;
         this.maxPrice = maxPrice;
+        this.sepalLength = sepalLength;
+    }
+
+    public double getSepalLength() {
+        return sepalLength;
     }
 
     public FlowerColor getColor() {

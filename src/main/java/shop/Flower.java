@@ -7,19 +7,22 @@ public class Flower {
 
     private FlowerType type;
 
+
     @Override
     public String toString() {
         return this.type + "{" +
                 "sepalLength=" + sepalLength +
-                ", color='" + color + '\'' +
+                ", color=" + color.userFriendly() +
                 ", price=" + price +
+                ", type=" + type +
                 '}';
     }
 
-    public Flower(FlowerColor color, double price, FlowerType type) {
+    public Flower(FlowerColor color, double price, FlowerType type, double sepalLength) {
         this.color = color;
         this.price = price;
         this.type = type;
+        this.sepalLength = sepalLength;
     }
 
     public Flower() {

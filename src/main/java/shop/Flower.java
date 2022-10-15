@@ -4,9 +4,7 @@ public class Flower {
     private double sepalLength;
     private FlowerColor color;
     private double price;
-
     private FlowerType type;
-
 
     @Override
     public String toString() {
@@ -38,10 +36,6 @@ public class Flower {
 
     public double getSepalLength() {
         return sepalLength;
-    }
-
-    public void setSepalLength(double sepalLength) {
-        this.sepalLength = sepalLength;
     }
 
     public String getColor() {

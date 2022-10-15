@@ -7,8 +7,11 @@ import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
 public class Store {
-
     private final Inventory inventory = new Inventory();
+
+    private List<Flower> search(Criteria criteria) {
+        return inventory.search(criteria);
+    }
 
     public static void main(String[] args) {
         startCustomerInteraction();
@@ -39,8 +42,9 @@ public class Store {
         System.out.println("Welcome to our store of flowers!");
         System.out.println();
     }
-    private static Criteria inputCriteria(){
-        Scanner sc  = new Scanner(System.in);
+
+    private static Criteria inputCriteria() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Please input the criteria of your search");
 
 
@@ -60,13 +64,13 @@ public class Store {
 
         System.out.println("What color do you like?");
         FlowerColor color = null;
-        while (color == null){
+        while (color == null) {
             System.out.print("Available: ");
             Arrays.stream(FlowerColor.values()).forEach(c -> System.out.print(c.userFriendly() + " "));
             System.out.println();
             try {
                 color = FlowerColor.valueOf(sc.nextLine().toUpperCase());
-            } catch (IllegalArgumentException ex){
+            } catch (IllegalArgumentException ex) {
                 System.out.println("Try again!");
             }
             System.out.println();
@@ -77,7 +81,7 @@ public class Store {
         while (maxPrice == -1) {
             try {
                 maxPrice = Double.parseDouble(sc.nextLine());
-            } catch (NumberFormatException ex){
+            } catch (NumberFormatException ex) {
                 System.out.println("Try again!");
             }
             System.out.println();
@@ -85,10 +89,10 @@ public class Store {
 
         System.out.println("What min sepal length do you want?");
         double sepalLength = -1;
-        while (sepalLength == -1){
+        while (sepalLength == -1) {
             try {
                 sepalLength = Double.parseDouble(sc.nextLine());
-            } catch (NumberFormatException ex){
+            } catch (NumberFormatException ex) {
                 System.out.println("Try again!");
             }
             System.out.println();
@@ -96,16 +100,14 @@ public class Store {
 
         return new Criteria(type, color, maxPrice, sepalLength);
     }
-    private List<Flower> search (Criteria criteria){
-        return inventory.search(criteria);
-    }
-    private static Flower getChoice(List <Flower> flowers){
-        Scanner sc  = new Scanner(System.in);
+
+    private static Flower getChoice(List<Flower> flowers) {
+        Scanner sc = new Scanner(System.in);
         for (int i = 0; i < flowers.size(); i++) {
             System.out.println(i + ": " + flowers.get(i));
         }
 
-        while(true) {
+        while (true) {
             System.out.println("Enter your choice: ");
             String intChoice = sc.nextLine();
             if (isInt(intChoice) && parseInt(intChoice) >= 0 && parseInt(intChoice) < flowers.size()) {
@@ -115,11 +117,12 @@ public class Store {
             }
         }
     }
+
     private static int getQuantity() {
-        Scanner sc  = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Okey, how many?");
 
-        while(true) {
+        while (true) {
             System.out.println("Enter quantity: ");
             String intChoice = sc.nextLine();
             if (isInt(intChoice) && parseInt(intChoice) > 0) {
@@ -129,26 +132,27 @@ public class Store {
             }
         }
     }
-    private static boolean wantMore(){
+
+    private static boolean wantMore() {
         System.out.println("Is that all? (yes/no)");
         Scanner sc = new Scanner(System.in);
 
-        while (true){
+        while (true) {
             String option = sc.nextLine();
             if (option.equals("no")) {
                 return true;
-            } else if (option.equals("yes")){
+            } else if (option.equals("yes")) {
                 return false;
             } else {
                 System.out.println("Try again!");
             }
         }
     }
-    private static void confirmPayment(double finalPrice){
+
+    private static void confirmPayment(double finalPrice) {
         if (finalPrice == 0) {
             System.out.println("Thanks for attending!");
-        }
-        else {
+        } else {
             System.out.println("The final price is " + finalPrice + "");
             System.out.println("Thanks for ordering!");
         }

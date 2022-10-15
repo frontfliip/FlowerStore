@@ -10,7 +10,7 @@ public class Criteria {
 
     private final FlowerType type;
 
-    public Criteria(FlowerType type, FlowerColor color, double maxPrice, double sepalLength){
+    public Criteria(FlowerType type, FlowerColor color, double maxPrice, double sepalLength) {
         this.type = type;
         this.color = color;
         this.maxPrice = maxPrice;

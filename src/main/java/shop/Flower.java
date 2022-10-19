@@ -1,50 +1,110 @@
 package shop;
 
-public class Flower {
-    protected double sepalLength;
-    protected FlowerColor color;
-    protected double price;
-
+/**
+ * Flower class.
+ */
+public final class Flower {
+    /**
+     * flower's sepalLength.
+     */
+    private double sepalLength;
+    /**
+     * flower's color.
+     */
+    private FlowerColor color;
+    /**
+     * flower's price.
+     */
+    private double price;
+    /**
+     * flower's type.
+     */
     private FlowerType type;
 
     @Override
     public String toString() {
-        return this.type + "{" +
-                "sepalLength=" + sepalLength +
-                ", color='" + color + '\'' +
-                ", price=" + price +
-                '}';
+        return this.type + "{"
+                + "sepalLength=" + sepalLength
+                + ", color=" + color.userFriendly()
+                + ", price=" + price
+                + ", type=" + type
+                + '}';
     }
 
+    /**
+     * @param flowerColor flowerColor.
+     * @param flowerPrice flowerPrice
+     * @param flowerType flowerType
+     * @param sepallLength sepallLength
+     */
+    public Flower(final FlowerColor flowerColor,
+                  final double flowerPrice, final FlowerType flowerType,
+                  final double sepallLength) {
+        this.color = flowerColor;
+        this.price = flowerPrice;
+        this.type = flowerType;
+        this.sepalLength = sepallLength;
+    }
+
+    /**
+     * Constructor.
+     */
+    public Flower() {
+    }
+
+    /**
+     * Getter.
+     * @return type
+     */
     public FlowerType getType() {
         return type;
     }
 
-    public void setType(FlowerType type) {
-        this.type = type;
+    /**
+     * Setter.
+     * @param flowerType type
+     */
+    public void setType(final FlowerType flowerType) {
+        this.type = flowerType;
     }
 
+    /**
+     * Getter.
+     * @return sepalLength
+     */
     public double getSepalLength() {
         return sepalLength;
     }
 
-    public void setSepalLength(double sepalLength) {
-        this.sepalLength = sepalLength;
-    }
-
+    /**
+     * Getter.
+     * @return color
+     */
     public String getColor() {
         return color.toString();
     }
 
-    public void setColor(FlowerColor color) {
-        this.color = color;
+    /**
+     * Setter.
+     * @param flowerColor color
+     */
+    public void setColor(final FlowerColor flowerColor) {
+        this.color = flowerColor;
     }
 
+    /**
+     * Getter.
+     * @return price
+     */
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    /**
+     * Setter.
+     * @param flowerPrice price
+     */
+    public void setPrice(final double flowerPrice) {
+        this.price = flowerPrice;
     }
 }

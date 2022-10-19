@@ -2,33 +2,33 @@ package shop;
 
 
 /**
- * Criteria for search
+ * Criteria for search.
  */
-final public class Criteria {
+public final class Criteria {
 
     /**
-     * sepalLength
+     * sepalLength.
      */
     private final double sepalLength;
 
     /**
-     * color
+     * color.
      */
     private final FlowerColor color;
 
     /**
-     * maxPrice
+     * maxPrice.
      */
     private final double maxPrice;
 
     /**
-     * type
+     * type.
      */
     private final FlowerType type;
 
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param flowerType type
      * @param flowerColor color

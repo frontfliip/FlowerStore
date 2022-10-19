@@ -21,7 +21,7 @@ public class Store {
      * Run store.
      * @param args args
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         startCustomerInteraction();
 
         Store store = new Store();

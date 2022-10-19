@@ -23,7 +23,7 @@ public enum FlowerColor {
     private final String stringRepresentation;
 
     /**
-     * User friendly representation
+     * User friendly representation.
      */
     private final String userFriendly;
 
@@ -32,7 +32,8 @@ public enum FlowerColor {
      * @param stringRepresent stringRepresent
      * @param userFriendlyRepresent userFriendlyRepresent
      */
-    FlowerColor(final String stringRepresent, final String userFriendlyRepresent) {
+    FlowerColor(final String stringRepresent,
+                final String userFriendlyRepresent) {
         this.stringRepresentation = stringRepresent;
         this.userFriendly = userFriendlyRepresent;
     }

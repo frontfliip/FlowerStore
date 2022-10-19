@@ -12,6 +12,9 @@ public final class Inventory {
      */
     private final List<Flower> flowers = new ArrayList<>();
 
+    /**
+     * Initialize inventory with available flowers.
+     */
     public Inventory() {
         flowers.add(new Flower(FlowerColor.WHITE, 9, FlowerType.CHAMOMILE, 7));
         flowers.add(new Flower(FlowerColor.BLUE, 20, FlowerType.CHAMOMILE, 7));
@@ -32,9 +35,15 @@ public final class Inventory {
         flowers.add(new Flower(FlowerColor.RED, 30, FlowerType.TULIP, 15));
     }
 
+    /**
+     * Find flowers by criteria.
+     * @param criteria search criteria
+     * @return search result
+     */
     public List<Flower> search(final Criteria criteria) {
         return flowers.stream()
-                .filter(f -> f.getColor().equals(criteria.getColor().toString()))
+                .filter(f -> f.getColor()
+                        .equals(criteria.getColor().toString()))
                 .filter(f -> f.getType().equals(criteria.getType()))
                 .filter(f -> f.getPrice() <= criteria.getMaxPrice())
                 .filter(f -> f.getSepalLength() >= criteria.getSepalLength())

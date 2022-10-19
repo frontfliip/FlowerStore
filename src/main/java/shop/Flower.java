@@ -62,10 +62,10 @@ public final class Flower {
 
     /**
      * Setter.
-     * @param type type
+     * @param flowerType type
      */
-    public void setType(FlowerType type) {
-        this.type = type;
+    public void setType(final FlowerType flowerType) {
+        this.type = flowerType;
     }
 
     /**
@@ -86,10 +86,10 @@ public final class Flower {
 
     /**
      * Setter.
-     * @param color color
+     * @param flowerColor color
      */
-    public void setColor(FlowerColor color) {
-        this.color = color;
+    public void setColor(final FlowerColor flowerColor) {
+        this.color = flowerColor;
     }
 
     /**
@@ -102,9 +102,9 @@ public final class Flower {
 
     /**
      * Setter.
-     * @param price price
+     * @param flowerPrice price
      */
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPrice(final double flowerPrice) {
+        this.price = flowerPrice;
     }
 }

@@ -3,7 +3,7 @@ package shop;
 /**
  * Flower class.
  */
-final public class Flower {
+public final class Flower {
     /**
      * flower's sepalLength.
      */
@@ -62,7 +62,7 @@ final public class Flower {
 
     /**
      * Setter.
-     * @param type
+     * @param type type
      */
     public void setType(FlowerType type) {
         this.type = type;
@@ -86,7 +86,7 @@ final public class Flower {
 
     /**
      * Setter.
-     * @param color
+     * @param color color
      */
     public void setColor(FlowerColor color) {
         this.color = color;
@@ -102,7 +102,7 @@ final public class Flower {
 
     /**
      * Setter.
-     * @param price
+     * @param price price
      */
     public void setPrice(double price) {
         this.price = price;

@@ -7,12 +7,20 @@ import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
 public class Store {
+
+    /**
+     * Inventory instance.
+     */
     private final Inventory inventory = new Inventory();
 
-    private List<Flower> search(Criteria criteria) {
+    private List<Flower> search(final Criteria criteria) {
         return inventory.search(criteria);
     }
 
+    /**
+     * Run store.
+     * @param args args
+     */
     public static void main(String[] args) {
         startCustomerInteraction();
 
@@ -52,7 +60,8 @@ public class Store {
         FlowerType type = null;
         while (type == null) {
             System.out.print("Available: ");
-            Arrays.stream(FlowerType.values()).forEach(t -> System.out.print(t + " "));
+            Arrays.stream(FlowerType.values())
+                    .forEach(t -> System.out.print(t + " "));
             System.out.println();
             try {
                 type = FlowerType.valueOf(sc.nextLine().toUpperCase());
@@ -66,7 +75,8 @@ public class Store {
         FlowerColor color = null;
         while (color == null) {
             System.out.print("Available: ");
-            Arrays.stream(FlowerColor.values()).forEach(c -> System.out.print(c.userFriendly() + " "));
+            Arrays.stream(FlowerColor.values())
+                    .forEach(c -> System.out.print(c.userFriendly() + " "));
             System.out.println();
             try {
                 color = FlowerColor.valueOf(sc.nextLine().toUpperCase());
@@ -101,7 +111,7 @@ public class Store {
         return new Criteria(type, color, maxPrice, sepalLength);
     }
 
-    private static Flower getChoice(List<Flower> flowers) {
+    private static Flower getChoice(final List<Flower> flowers) {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < flowers.size(); i++) {
             System.out.println(i + ": " + flowers.get(i));
@@ -110,7 +120,9 @@ public class Store {
         while (true) {
             System.out.println("Enter your choice: ");
             String intChoice = sc.nextLine();
-            if (isInt(intChoice) && parseInt(intChoice) >= 0 && parseInt(intChoice) < flowers.size()) {
+            if (isInt(intChoice)
+                    && parseInt(intChoice) >= 0
+                    && parseInt(intChoice) < flowers.size()) {
                 return flowers.get(parseInt(intChoice));
             } else {
                 System.out.println("Try again!");
@@ -149,7 +161,7 @@ public class Store {
         }
     }
 
-    private static void confirmPayment(double finalPrice) {
+    private static void confirmPayment(final double finalPrice) {
         if (finalPrice == 0) {
             System.out.println("Thanks for attending!");
         } else {
@@ -158,7 +170,7 @@ public class Store {
         }
     }
 
-    private static boolean isInt(String str) {
+    private static boolean isInt(final String str) {
         try {
             parseInt(str);
         } catch (NumberFormatException ex) {

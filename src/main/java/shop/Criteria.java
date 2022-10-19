@@ -46,7 +46,7 @@ public final class Criteria {
     }
 
     /**
-     * Getter
+     * Getter.
      * @return sepal length
      */
     public double getSepalLength() {
@@ -54,7 +54,7 @@ public final class Criteria {
     }
 
     /**
-     * `Getter
+     * `Getter.
       * @return color
      */
     public FlowerColor getColor() {
@@ -62,7 +62,7 @@ public final class Criteria {
     }
 
     /**
-     * Getter
+     * Getter.
      * @return max price
      */
     public double getMaxPrice() {
@@ -70,7 +70,7 @@ public final class Criteria {
     }
 
     /**
-     * Getter
+     * Getter.
      * @return type
      */
     public FlowerType getType() {

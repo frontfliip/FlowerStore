@@ -1,26 +1,43 @@
 package shop;
 
-public class Flower {
+/**
+ * Flower class
+ */
+final public class Flower {
+    /**
+     * flower's sepalLength
+     */
     private double sepalLength;
+    /**
+     * flower's color
+     */
     private FlowerColor color;
+    /**
+     * flower's price
+     */
     private double price;
+    /**
+     * flower's type
+     */
     private FlowerType type;
 
     @Override
     public String toString() {
-        return this.type + "{" +
-                "sepalLength=" + sepalLength +
-                ", color=" + color.userFriendly() +
-                ", price=" + price +
-                ", type=" + type +
-                '}';
+        return this.type + "{"
+                + "sepalLength=" + sepalLength
+                + ", color=" + color.userFriendly()
+                + ", price=" + price
+                + ", type=" + type
+                + '}';
     }
 
-    public Flower(FlowerColor color, double price, FlowerType type, double sepalLength) {
-        this.color = color;
-        this.price = price;
-        this.type = type;
-        this.sepalLength = sepalLength;
+    public Flower(FlowerColor flowerColor,
+                  final double flowerPrice, final FlowerType flowerType,
+                  final double sepallLength) {
+        this.color = flowerColor;
+        this.price = flowerPrice;
+        this.type = flowerType;
+        this.sepalLength = sepallLength;
     }
 
     public Flower() {
